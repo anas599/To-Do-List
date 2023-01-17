@@ -1,4 +1,3 @@
 # Ignore Mac system files
 .DS_store
 node_modules
-!node_modules/webpack/
