@@ -1,5 +1,4 @@
 // eslint-disable-next-line no-unused-vars
-import _ from 'lodash';
 import './style.css';
 
 function component() {
@@ -11,14 +10,16 @@ function component() {
   const showList = document.createElement('div');
   const clearAll = document.createElement('a');
 
+  const refreshIcon = document.createElement('i');
+  refreshIcon.innerHTML = '<i class="fa fa-refresh"></i>';
   addToDo.innerHTML = 'Today\'s To Do';
   addToDo.classList.add('todayHead');
   addPlaceHolder.classList.add('addPlaceHolder');
   addPlaceHolder.setAttribute('placeholder', 'Add to your list...');
   clearAll.innerHTML = 'Clear all completed';
   clearAll.classList = 'clearAll';
-
   x.setAttribute('type', 'checkbox');
+  addToDo.appendChild(refreshIcon);
 
   const listData = [
     {
@@ -40,17 +41,21 @@ function component() {
 
   // Lodash, now imported by this script
 
-  showList.innerHTML = listData.map(
-    (toDoArr) => `
-    <li class='oneTask'>
-    <input type='checkbox'>
-    <p id='indexNum'>${toDoArr.index} </p>
-    <p>${toDoArr.description} </p>
+  showList.innerHTML = listData
+    .map(
+      (toDoArr) => `
+      <li class='oneTask'>
+      <p id='indexNum'>${toDoArr.index} </p>
+      <p>${toDoArr.description} </p>
+      <input type='checkbox'>
+      <i class="threeDots"> .</i>
     </li>
     `,
-  ).sort().join('');
-  element.classList.add('toDoList');
+    )
+    .sort()
+    .join('');
 
+  element.classList.add('toDoList');
   element.appendChild(btn);
   element.appendChild(addToDo);
   element.appendChild(addPlaceHolder);

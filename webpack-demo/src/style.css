@@ -7,6 +7,7 @@ body {
   border: 1px solid black;
   filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.426));
   background-color: white;
+  width: 500px;
 }
 
 .addPlaceHolder {
@@ -17,16 +18,28 @@ body {
 }
 
 .todayHead {
+  display: flex;
   border-bottom: 1px solid rgb(211, 211, 211);
   width: 100%;
-
-  /* padding: 10px; */
+  padding: 10px;
+  inline-size: 96%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .oneTask {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  height: 50px;
+  align-items: center;
   border-top: 1px solid rgb(211, 211, 211);
+  justify-content: flex-end;
+}
+
+.oneTaskID {
+  display: flex;
+  flex-direction: column;
 }
 
 p {
@@ -56,4 +69,26 @@ input[type='checkbox'] {
   align-content: center;
   justify-content: center;
   align-items: center;
+}
+
+.threeDots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: url('./3-vertical-dots-icon.svg');
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  margin: 20px;
+}
+
+.threeDots2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: url('./3-vertical-dots-icon.svg');
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  margin: 20px;
 }
