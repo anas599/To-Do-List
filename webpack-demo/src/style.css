@@ -1,6 +1,49 @@
 body{
-    background-color: beige;
+    background-color: rgb(255, 255, 255);
 }
-.hello {
-    color: red;
+.toDoList {
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.426));
+    background-color: white;
+}
+.addPlaceHolder{
+    border: none;
+    font-size: 15px;
+    margin: 10px;
+    font-style: italic;
+}
+.todayHead{
+    border-bottom: 1px solid rgb(211, 211, 211);
+    width: 100%;
+    /* padding: 10px; */
+}
+.oneTask{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid rgb(211, 211, 211);
+}
+p{
+    width: max-content;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+input[type='checkbox']{
+    margin: 10px;
+}
+#indexNum{
+    display: none;
+}
+.clearAll{
+    display: flex;
+    background-color: #F6F6F6;
+    font-size: 20px;
+    color: #a2a2a2;
+    height: 50px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
