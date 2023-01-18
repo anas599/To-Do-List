@@ -11,6 +11,7 @@ body {
 }
 
 .addPlaceHolder {
+  display: flex;
   border: none;
   font-size: 15px;
   margin: 10px;
@@ -81,14 +82,13 @@ input[type='checkbox'] {
   right: 0;
   margin: 20px;
 }
-
-.threeDots2 {
-  display: flex;
+.refreshIcon {
+  /* display: flex;
   flex-direction: row;
-  align-items: center;
-  background: url('./3-vertical-dots-icon.svg');
-  background-repeat: no-repeat;
+  align-items: center; */
+  background: url('./refreshIcon.svg');
+  /* background-repeat: no-repeat;
   position: absolute;
   right: 0;
-  margin: 20px;
+  margin: 20px; */
 }
