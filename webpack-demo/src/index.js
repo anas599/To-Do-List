@@ -1,5 +1,5 @@
 import './style.css';
-import addTask from './listFunctions.js';
+import { removeTask, addTask } from './listFunctions.js';
 
 export const listData = [
   {
@@ -38,22 +38,6 @@ function component() {
   clearAll.classList = 'clearAll';
 
   // Lodash, now imported by this script
-
-  showList.innerHTML = listData
-    .map(
-      (toDoArr) => `
-      <li class='oneTask'>
-      <p id='indexNum'>${toDoArr.index} </p>
-      <p>${toDoArr.description} </p>
-      <label for="checkbox"> </label>
-      <input type='checkbox' id="checkbox">
-      <i class="threeDots"> .</i>
-    </li>
-    `,
-    )
-    .sort()
-    .join('');
-
   element.classList.add('toDoList');
   element.appendChild(addToDo);
   containerDiv.appendChild(addPlaceHolder);
@@ -64,8 +48,11 @@ function component() {
 
   document.querySelector('#addTask1').addEventListener('click', () => {
     addTask(document.querySelector('.addPlaceHolder').value);
-  });
 
+    document.querySelector('#removeButton').addEventListener('click', () => {
+      removeTask(document.querySelector('#removeButton').value);
+    });
+  });
   return element;
 }
 
