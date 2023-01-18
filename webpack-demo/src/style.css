@@ -82,15 +82,3 @@ input[type='checkbox'] {
   right: 0;
   margin: 20px;
 }
-
-.refreshIcon {
-  /* display: flex;
-  flex-direction: row;
-  align-items: center; */
-  background: url('./refreshIcon.svg');
-
-  /* background-repeat: no-repeat;
-  position: absolute;
-  right: 0;
-  margin: 20px; */
-}

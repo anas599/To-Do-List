@@ -10,7 +10,6 @@ function component() {
   addToDo.innerHTML = 'Today\'s To Do';
   addToDo.classList.add('todayHead');
   addPlaceHolder.classList.add('addPlaceHolder');
-  addPlaceHolder.classList.add('refresh');
   addPlaceHolder.setAttribute('placeholder', 'Add to your list...');
   clearAll.innerHTML = 'Clear all completed';
   clearAll.classList = 'clearAll';
