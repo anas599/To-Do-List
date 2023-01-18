@@ -1,1 +1,1 @@
-(self.webpackChunkwebpack_demo=self.webpackChunkwebpack_demo||[]).push([[830],{994:()=>{}},e=>{e(e.s=994)}]);
+(self.webpackChunkwebpack_demo=self.webpackChunkwebpack_demo||[]).push([[830],{994:()=>{console.log([])}},e=>{e(e.s=994)}]);

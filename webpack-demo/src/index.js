@@ -14,7 +14,7 @@ function component() {
   clearAll.innerHTML = 'Clear all completed';
   clearAll.classList = 'clearAll';
   x.setAttribute('type', 'checkbox');
-
+  x.id = 'myInput';
   const listData = [
     {
       description: 'Wash the car',
