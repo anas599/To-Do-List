@@ -56,6 +56,11 @@ input[type='checkbox'] {
   margin: 10px;
 }
 
+input[type="text" i] {
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+}
+
 #indexNum {
   display: none;
 }
