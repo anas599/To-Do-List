@@ -98,6 +98,23 @@ input[type='checkbox'] {
   color: white;
 }
 
+.showDelete {
+  display: flex;
+}
+
+#addTask1 {
+  margin-right: 20px;
+  width: 30px;
+  height: 25px;
+  border: none;
+  background: url('./icons/enterIcon.svg');
+  background-repeat: no-repeat;
+}
+
+#addTask1:active {
+  border: 1px solid rgb(174, 172, 172);
+}
+
 .add-container {
   display: flex;
   flex-direction: row;

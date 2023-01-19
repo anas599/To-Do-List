@@ -31,7 +31,7 @@ function displayTasks() {
 
     const button = document.createElement('button');
     button.classList.add('threeDots');
-    button.innerText = 'edit';
+    button.innerText = '__';
     li.appendChild(button);
     button.addEventListener('click', () => {
       // eslint-disable-next-line no-use-before-define
@@ -69,12 +69,25 @@ export function removeTask(index) {
   listData.forEach((task, i) => (task.index = i + 1));
   const str = JSON.stringify(listData);
   localStorage.setItem('toDoStorage', str);
-
   displayTasks();
 }
 
-function editTask(index) {
+export function editTask(index) {
   const dotsIcon = document.querySelector(`#removeButton-${index}`);
-  dotsIcon.style.display = 'flex';
+  dotsIcon.classList.toggle('showDelete');
+  const task = document.querySelectorAll('.oneTask')[index];
+  const p2 = task.querySelector('p:nth-of-type(2)');
+  task.style.backgroundColor = '#f8f692';
+  const newDescription = document.createElement('input');
+  newDescription.setAttribute('type', 'text');
+  newDescription.value = listData[index].description;
+  p2.parentNode.replaceChild(newDescription, p2);
+  // eslint-disable-next-line func-names
+  newDescription.onblur = function () {
+    listData[index].description = this.value;
+    localStorage.setItem('toDoStorage', JSON.stringify(listData));
+
+    displayTasks();
+  };
 }
 export { displayTasks };

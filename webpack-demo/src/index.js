@@ -12,7 +12,7 @@ const clearAll = document.createElement('a');
 
 const addButton = document.createElement('button');
 addButton.id = 'addTask1';
-addButton.innerHTML = 'Add1';
+addButton.innerHTML = '';
 
 function component() {
   addToDo.innerHTML = "Today's To Do";
