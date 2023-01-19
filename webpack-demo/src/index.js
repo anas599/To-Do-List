@@ -1,4 +1,5 @@
 import './style.css';
+// eslint-disable-next-line import/no-cycle
 import { addTask, displayTasks } from './listFunctions.js';
 
 const containerDiv = document.createElement('div');

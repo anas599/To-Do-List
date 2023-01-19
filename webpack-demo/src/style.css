@@ -82,7 +82,8 @@ input[type='checkbox'] {
   right: 0;
   margin: 20px;
 }
-.add-container{
+
+.add-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
