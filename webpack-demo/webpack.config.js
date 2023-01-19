@@ -7,6 +7,7 @@ module.exports = {
   entry: {
     index: './src/index.js',
     listFunctions: './src/listFunctions.js',
+    interactiveList: './src/interactiveList.js',
   },
   devServer: {
     static: './dist',
