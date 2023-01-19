@@ -1,33 +1,18 @@
 import './style.css';
-import { removeTask, addTask } from './listFunctions.js';
+import { addTask } from './listFunctions.js';
 
-export const listData = [
-  {
-    description: 'Wash the car',
-    completed: true,
-    index: 2,
-  },
-  {
-    description: 'Pay the all bills',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Go to the Gym',
-    completed: true,
-    index: 3,
-  },
-];
 const containerDiv = document.createElement('div');
 containerDiv.classList.add('add-container');
-const element = document.querySelector('#toDoList');
+export const element = document.querySelector('#toDoList');
 const addToDo = document.createElement('p');
 const addPlaceHolder = document.createElement('input');
 export const showList = document.createElement('div');
 const clearAll = document.createElement('a');
+
 const addButton = document.createElement('button');
 addButton.id = 'addTask1';
 addButton.innerHTML = 'Add1';
+
 function component() {
   addToDo.innerHTML = "Today's To Do";
   addToDo.classList.add('todayHead');
@@ -48,12 +33,7 @@ function component() {
 
   document.querySelector('#addTask1').addEventListener('click', () => {
     addTask(document.querySelector('.addPlaceHolder').value);
-
-    document.querySelector('#removeButton').addEventListener('click', () => {
-      removeTask(document.querySelector('#removeButton').value);
-    });
   });
   return element;
 }
-
 document.body.appendChild(component());
