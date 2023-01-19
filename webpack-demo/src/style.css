@@ -56,6 +56,11 @@ input[type='checkbox'] {
   margin: 10px;
 }
 
+input[type="text" i] {
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+}
+
 #indexNum {
   display: none;
 }
@@ -72,13 +77,51 @@ input[type='checkbox'] {
   align-items: center;
 }
 
-.threeDots {
-  display: flex;
+[id*=removeButton] {
+  display: none;
   flex-direction: row;
   align-items: center;
-  background: url('./3-vertical-dots-icon.svg');
+  background: url('./icons/deleteIcon.svg');
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
   margin: 20px;
+  border: none;
+  color: white;
+}
+
+.threeDots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: url('./icons/3-vertical-dots-icon.svg');
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  border: none;
+  color: white;
+}
+
+.showDelete {
+  display: flex;
+}
+
+#addTask1 {
+  margin-right: 20px;
+  width: 30px;
+  height: 25px;
+  border: none;
+  background: url('./icons/enterIcon.svg');
+  background-repeat: no-repeat;
+}
+
+#addTask1:active {
+  border: 1px solid rgb(174, 172, 172);
+}
+
+.add-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
