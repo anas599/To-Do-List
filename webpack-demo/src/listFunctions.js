@@ -1,8 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import { showList } from './index.js';
 
-// eslint-disable-next-line import/no-mutable-exports
-export let listData = [{}];
+let listData = [];
 if (localStorage.toDoStorage !== undefined) {
   listData = JSON.parse(localStorage.toDoStorage);
 }
@@ -65,9 +64,9 @@ export function addTask(description) {
 
 export function removeTask(index) {
   listData.splice(index, 1);
-  // eslint-disable-next-line no-return-assign
-  listData.forEach((task, i) => (task.index = i + 1));
-  const str = JSON.stringify(listData);
+  for (let i = 0; i < listData.length; i += 1) {
+    listData[i].index = i + 1;
+  } const str = JSON.stringify(listData);
   localStorage.setItem('toDoStorage', str);
   displayTasks();
 }
@@ -82,8 +81,7 @@ export function editTask(index) {
   newDescription.setAttribute('type', 'text');
   newDescription.value = listData[index].description;
   p2.parentNode.replaceChild(newDescription, p2);
-  // eslint-disable-next-line func-names
-  newDescription.onblur = function () {
+  newDescription.onblur = function away() {
     listData[index].description = this.value;
     localStorage.setItem('toDoStorage', JSON.stringify(listData));
 
