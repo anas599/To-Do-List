@@ -1,24 +1,11 @@
 // eslint-disable-next-line import/no-cycle
 import { showList } from './index.js';
 
-export const listData = [
-  {
-    description: 'Wash the car',
-    completed: true,
-    index: 2,
-  },
-  {
-    description: 'Pay the all bills',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Go to the Gym',
-    completed: true,
-    index: 3,
-  },
-];
-
+// eslint-disable-next-line import/no-mutable-exports
+export let listData = [{}];
+if (localStorage.toDoStorage !== undefined) {
+  listData = JSON.parse(localStorage.toDoStorage);
+}
 function displayTasks() {
   showList.innerHTML = '';
   listData.forEach((toDoArr, index) => {
@@ -42,10 +29,10 @@ function displayTasks() {
     checkbox.id = 'checkbox';
     li.appendChild(checkbox);
 
-    const i = document.createElement('i');
-    i.classList.add('threeDots');
-    i.innerText = '.';
-    li.appendChild(i);
+    const button = document.createElement('button');
+    button.classList.add('threeDots');
+    button.innerText = 'edit';
+    li.appendChild(button);
 
     showList.appendChild(li);
     const removeTaskBtn = document.createElement('button');
@@ -67,6 +54,8 @@ export function addTask(description) {
     index: nextIndex,
   };
   listData.push(newTask);
+  const str = JSON.stringify(listData);
+  localStorage.setItem('toDoStorage', str);
   displayTasks();
 }
 
@@ -74,5 +63,10 @@ export function removeTask(index) {
   listData.splice(index, 1);
   // eslint-disable-next-line no-return-assign
   listData.forEach((task, i) => (task.index = i + 1));
+  const str = JSON.stringify(listData);
+  localStorage.setItem('toDoStorage', str);
+
   displayTasks();
 }
+
+export { displayTasks };

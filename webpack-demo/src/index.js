@@ -1,5 +1,5 @@
 import './style.css';
-import { addTask } from './listFunctions.js';
+import { addTask, displayTasks } from './listFunctions.js';
 
 const containerDiv = document.createElement('div');
 containerDiv.classList.add('add-container');
@@ -36,4 +36,5 @@ function component() {
   });
   return element;
 }
+displayTasks();
 document.body.appendChild(component());
