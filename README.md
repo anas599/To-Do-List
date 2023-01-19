@@ -5,9 +5,8 @@
 
 <div align="center">
 
-  <img src="./to-do-list.svg" alt="logo" width="140"  height="auto" />
+  <img src="./webpack-demo/src/icons/to-do-list.svg" alt="logo" width="140"  height="auto" />
   <br/>
-
   <h3><b>To Do List</b></h3>
 
 </div>

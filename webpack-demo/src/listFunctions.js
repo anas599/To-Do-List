@@ -33,11 +33,15 @@ function displayTasks() {
     button.classList.add('threeDots');
     button.innerText = 'edit';
     li.appendChild(button);
+    button.addEventListener('click', () => {
+      // eslint-disable-next-line no-use-before-define
+      editTask(index);
+    });
 
     showList.appendChild(li);
     const removeTaskBtn = document.createElement('button');
-    removeTaskBtn.id = 'removeButton';
-    removeTaskBtn.innerHTML = 'remove';
+    removeTaskBtn.id = `removeButton-${index}`;
+    removeTaskBtn.innerHTML = '.';
     li.appendChild(removeTaskBtn);
     removeTaskBtn.addEventListener('click', () => {
       // eslint-disable-next-line no-use-before-define
@@ -69,4 +73,8 @@ export function removeTask(index) {
   displayTasks();
 }
 
+function editTask(index) {
+  const dotsIcon = document.querySelector(`#removeButton-${index}`);
+  dotsIcon.style.display = 'flex';
+}
 export { displayTasks };
