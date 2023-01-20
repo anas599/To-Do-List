@@ -1,10 +1,11 @@
 // eslint-disable-next-line import/no-cycle
 import { showList } from './index.js';
+// eslint-disable-next-line import/no-mutable-exports
+export let listData = localStorage.toDoStorage !== undefined
+  ? JSON.parse(localStorage.toDoStorage)
+  : [];
+export default listData;
 
-let listData = [];
-if (localStorage.toDoStorage !== undefined) {
-  listData = JSON.parse(localStorage.toDoStorage);
-}
 function displayTasks() {
   showList.innerHTML = '';
   listData.forEach((toDoArr, index) => {
@@ -26,7 +27,15 @@ function displayTasks() {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.id = 'checkbox';
+    if (toDoArr.completed) {
+      checkbox.setAttribute('checked', true);
+      li.classList.add('completed');
+    }
     li.appendChild(checkbox);
+    checkbox.addEventListener('click', () => {
+      // eslint-disable-next-line no-use-before-define
+      updateTaskStatus(index);
+    });
 
     const button = document.createElement('button');
     button.classList.add('threeDots');
@@ -47,6 +56,12 @@ function displayTasks() {
       removeTask(index);
     });
   });
+}
+export function clearCompletedTasks() {
+  listData = listData.filter((task) => !task.completed);
+  const str = JSON.stringify(listData);
+  localStorage.setItem('toDoStorage', str);
+  displayTasks();
 }
 
 export function addTask(description) {
@@ -87,5 +102,17 @@ export function editTask(index) {
 
     displayTasks();
   };
+}
+export function updateTaskStatus(index) {
+  const checkbox = document.querySelectorAll('#checkbox')[index];
+  listData[index].completed = !listData[index].completed;
+  listData[index].completed = checkbox.checked;
+  const taskElement = document.querySelectorAll('.oneTask')[index];
+  if (listData[index].completed) {
+    taskElement.classList.add('completed');
+  } else {
+    taskElement.classList.remove('completed');
+  }
+  localStorage.setItem('toDoStorage', JSON.stringify(listData));
 }
 export { displayTasks };
