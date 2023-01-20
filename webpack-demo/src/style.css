@@ -66,6 +66,8 @@ input[type="text" i] {
 }
 
 .clearAll {
+  border: none;
+  border-top: 1px solid #a2a2a2;
   display: flex;
   background-color: #f6f6f6;
   font-size: 20px;
@@ -75,6 +77,11 @@ input[type="text" i] {
   align-content: center;
   justify-content: center;
   align-items: center;
+  width: 500px;
+}
+
+.clearAll:active {
+  color: black;
 }
 
 [id*=removeButton] {
@@ -124,4 +131,9 @@ input[type="text" i] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
 }
