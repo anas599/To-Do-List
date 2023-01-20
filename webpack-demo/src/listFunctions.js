@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-cycle
 import { showList } from './index.js';
-
-let listData = [];
-if (localStorage.toDoStorage !== undefined) {
-  listData = JSON.parse(localStorage.toDoStorage);
-}
+// eslint-disable-next-line import/no-mutable-exports
+export let listData = localStorage.toDoStorage !== undefined
+  ? JSON.parse(localStorage.toDoStorage)
+  : [];
+export default listData;
 
 function displayTasks() {
   showList.innerHTML = '';
