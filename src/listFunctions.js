@@ -8,6 +8,7 @@ export default listData;
 
 function displayTasks() {
   showList.innerHTML = '';
+
   listData.forEach((toDoArr, index) => {
     const li = document.createElement('li');
     li.classList.add('oneTask');
