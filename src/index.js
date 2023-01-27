@@ -1,4 +1,4 @@
-// import './style.css';
+import './style.css';
 // eslint-disable-next-line import/no-cycle
 import {
   addTask, displayTasks, clearCompletedTasks,
